@@ -3,14 +3,13 @@ const {CONNECTION_STRING} = process.env
 const Sequelize = require('sequelize')
 
 const sequelize = new Sequelize(CONNECTION_STRING, {
-    dialect: 'postgres',
+    dialect: 'postgres', 
     dialectOptions: {
         ssl: {
-            rejectUnauthorized: false
+            rejectUnauthorized: false,
+            require: true
         }
     }
 })
 
-module.exports = {
-    sequelize
-}
+module.exports = {sequelize}
