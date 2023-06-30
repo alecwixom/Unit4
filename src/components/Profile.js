@@ -15,7 +15,7 @@ const Profile = () => {
     const [posts, setPosts] = useState([])
 
     const getUserPosts = useCallback(() => {
-        axios.get(`/userposts/${userId}`)
+        axios.get(`http://localhost:4001/userposts/${userId}`)
             .then(res => setPosts(res.data))
             .catch(err => console.log(err))
     }, [userId])
@@ -25,7 +25,7 @@ const Profile = () => {
     }, [getUserPosts])
 
     const updatePost = (id, status) => {
-        axios.put(`/posts/${id}`, {status: !status}, {
+        axios.put(`http://localhost:4001/posts/${id}`, {status: !status}, {
             headers: {
                 authorization: token
             }
@@ -39,7 +39,7 @@ const Profile = () => {
     }
 
     const deletePost = id => {
-        axios.delete(`/posts/${id}`, {
+        axios.delete(`http://localhost:4001/posts/${id}`, {
             headers: {
                 authorization: token
             }

@@ -12,7 +12,7 @@ const {register, login} = require('./controllers/auth')
 const {isAuthenticated} = require('./middleware/isAuthenticated')
 
 const app = express()
-
+app.use(express.static(__dirname + '/../build'))
 app.use(express.json())
 app.use(cors())
 

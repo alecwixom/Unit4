@@ -12,4 +12,6 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
     }
 })
 
-module.exports = {sequelize}
+module.exports = {
+    sequelize}
+    
