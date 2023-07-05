@@ -28,7 +28,7 @@ const getLocalData = () => {
     localStorage.removeItem('exp')
     localStorage.removeItem('userId')
     return null
-  }
+  } 
 
 
   return {
@@ -51,7 +51,7 @@ export const AuthContextProvider = (props) => {
   }
 
   const [token, setToken] = useState(initialToken)
-  const [userId, setUserId] = useState(initialId)
+  const [userId, setUserId] = useState(Number(initialId))
 
 
   const logout = useCallback(() => {
